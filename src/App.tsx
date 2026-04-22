@@ -10,6 +10,7 @@ import MapPage from './pages/MapPage';
 import LovePage from './pages/LovePage';
 import AlbumPage from './pages/AlbumPage';
 import LetterPage from './pages/LetterPage';
+import QuizPage from './pages/QuizPage';
 import FinalePage from './pages/FinalePage';
 
 function AnimatedRoutes() {
@@ -24,6 +25,7 @@ function AnimatedRoutes() {
         <Route path="/love" element={<LovePage />} />
         <Route path="/album" element={<AlbumPage />} />
         <Route path="/letter" element={<LetterPage />} />
+        <Route path="/quiz" element={<QuizPage />} />
         <Route path="/finale" element={<FinalePage />} />
       </Routes>
     </AnimatePresence>

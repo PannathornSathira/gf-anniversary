@@ -95,7 +95,7 @@ function TimelineCard({
         >
           {/* Photo — shows only if photo is set in config */}
           {memory.photo && (
-            <div className="w-full h-40 rounded-xl mb-4 overflow-hidden">
+            <div className="w-full h-64 rounded-xl mb-4 overflow-hidden">
               <img src={memory.photo} alt={memory.title} className="w-full h-full object-cover" />
             </div>
           )}

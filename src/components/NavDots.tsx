@@ -7,6 +7,7 @@ const CHAPTERS = [
   { path: '/love', label: 'Love Notes' },
   { path: '/album', label: 'Album' },
   { path: '/letter', label: 'Letter' },
+  { path: '/quiz', label: 'Quiz' },
   { path: '/finale', label: 'Finale' },
 ];
 

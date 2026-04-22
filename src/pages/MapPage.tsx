@@ -61,7 +61,7 @@ export default function MapPage() {
           <MapContainer
             center={center}
             zoom={6}
-            style={{ height: '500px', width: '100%' }}
+            style={{ height: '550px', width: '100%' }}
             scrollWheelZoom={true}
           >
             <TileLayer
@@ -72,12 +72,12 @@ export default function MapPage() {
             {pins.map((pin, i) => (
               <Marker key={i} position={[pin.lat, pin.lng]} icon={pinkIcon}>
                 <Popup>
-                  <div className="text-center p-1" style={{ minWidth: '180px' }}>
+                  <div className="text-center p-1" style={{ minWidth: '240px' }}>
                     {'photo' in pin && pin.photo && (
                       <img
                         src={pin.photo as string}
                         alt={pin.title}
-                        className="w-full h-24 object-cover rounded-lg mb-2"
+                        className="w-full h-48 object-cover rounded-lg mb-2"
                       />
                     )}
                     <span className="text-2xl block mb-1">{pin.emoji}</span>

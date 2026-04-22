@@ -58,7 +58,7 @@ export default function LetterPage() {
           )}
         </motion.div>
 
-        <NextChapterButton to="/finale" />
+        <NextChapterButton to="/quiz" />
       </div>
     </PageTransition>
   );
