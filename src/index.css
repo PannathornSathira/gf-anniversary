@@ -1,0 +1,197 @@
+@import "tailwindcss";
+
+@theme {
+  --color-blush: #fce4ec;
+  --color-blush-dark: #f8bbd0;
+  --color-rose: #f48fb1;
+  --color-rose-deep: #e91e63;
+  --color-cream: #fdf6f0;
+  --color-cream-dark: #f5e6d3;
+  --color-mauve: #ce93d8;
+  --color-mauve-light: #e1bee7;
+  --color-parchment: #faf3e0;
+  --color-warm-white: #fff9f5;
+  --color-text-primary: #4a3333;
+  --color-text-secondary: #7a5a5a;
+  --color-text-light: #a08080;
+
+  --font-serif: 'Cormorant Garamond', serif;
+  --font-sans: 'Jost', sans-serif;
+}
+
+/* ─── Base ──────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-text-primary);
+  background: var(--color-cream);
+  margin: 0;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── Scrollbar ─────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-cream);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-blush-dark);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-rose);
+}
+
+/* ─── Petal Animation ───────────────────────── */
+@keyframes petal-fall {
+  0% {
+    transform: translateY(-10vh) rotate(0deg) translateX(0);
+    opacity: 1;
+  }
+  25% {
+    transform: translateY(22vh) rotate(90deg) translateX(30px);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translateY(50vh) rotate(180deg) translateX(-20px);
+    opacity: 0.7;
+  }
+  75% {
+    transform: translateY(75vh) rotate(270deg) translateX(25px);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(110vh) rotate(360deg) translateX(-10px);
+    opacity: 0;
+  }
+}
+
+.petal {
+  position: fixed;
+  pointer-events: none;
+  z-index: 50;
+  animation: petal-fall linear infinite;
+  will-change: transform;
+}
+
+/* ─── Paper Texture ─────────────────────────── */
+.paper-texture {
+  background-color: var(--color-parchment);
+  background-image: 
+    radial-gradient(ellipse at 20% 50%, rgba(255, 229, 180, 0.15) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(255, 192, 203, 0.1) 0%, transparent 50%),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+}
+
+/* ─── Pulse Animation (heart) ───────────────── */
+@keyframes heart-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+.animate-heart-pulse {
+  animation: heart-pulse 1.2s ease-in-out infinite;
+}
+
+/* ─── Glow Animation ────────────────────────── */
+@keyframes soft-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(244, 143, 177, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(244, 143, 177, 0.6), 0 0 60px rgba(233, 30, 99, 0.2); }
+}
+
+.animate-glow {
+  animation: soft-glow 2.5s ease-in-out infinite;
+}
+
+/* ─── Sticky Note ───────────────────────────── */
+.sticky-note {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.6;
+  padding: 1.5rem;
+  border-radius: 2px;
+  box-shadow: 
+    2px 3px 12px rgba(0,0,0,0.08),
+    inset 0 0 40px rgba(255,255,255,0.3);
+  position: relative;
+}
+
+.sticky-note::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-rose), var(--color-mauve));
+  opacity: 0.5;
+}
+
+/* ─── Polaroid ──────────────────────────────── */
+.polaroid {
+  background: white;
+  padding: 12px 12px 40px 12px;
+  box-shadow: 
+    0 4px 20px rgba(0,0,0,0.08),
+    0 1px 3px rgba(0,0,0,0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.polaroid:hover {
+  transform: scale(1.03) rotate(0deg) !important;
+  box-shadow: 0 8px 30px rgba(244, 143, 177, 0.25);
+}
+
+/* ─── Timeline ──────────────────────────────── */
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--color-blush-dark), var(--color-mauve-light), var(--color-blush-dark));
+  transform: translateX(-50%);
+}
+
+@media (max-width: 768px) {
+  .timeline-line {
+    left: 24px;
+  }
+}
+
+/* ─── Leaflet overrides for pastel look ─────── */
+.leaflet-container {
+  border-radius: 16px;
+  font-family: var(--font-sans);
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  font-family: var(--font-sans);
+}
+
+.leaflet-popup-tip {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+/* ─── Lightbox ──────────────────────────────── */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+}
