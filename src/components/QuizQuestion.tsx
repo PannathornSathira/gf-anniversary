@@ -60,13 +60,18 @@ export default function QuizQuestion({ question, index, total, onAnswer }: QuizQ
       </div>
 
       {/* Question Card */}
-      <div className="paper-texture p-8 rounded-3xl mb-8 relative overflow-hidden" style={{ border: '1px solid rgba(244, 143, 177, 0.1)' }}>
+      <div className="paper-texture p-8 rounded-3xl mb-8 relative overflow-hidden flex flex-col items-center" style={{ border: '1px solid rgba(244, 143, 177, 0.1)' }}>
         <h3 
-          className="text-2xl md:text-3xl font-semibold text-center mb-0"
+          className="text-2xl md:text-3xl font-semibold text-center mb-4"
           style={{ fontFamily: 'var(--font-serif)', color: 'var(--color-text-primary)' }}
         >
           {question.question}
         </h3>
+        {question.hint && (
+          <p className="text-center text-sm md:text-base italic px-4 py-2 rounded-full" style={{ backgroundColor: 'rgba(244, 143, 177, 0.1)', color: 'var(--color-rose)' }}>
+            💡 Hint: {question.hint}
+          </p>
+        )}
       </div>
 
       {/* Options Grid */}
@@ -113,11 +118,6 @@ export default function QuizQuestion({ question, index, total, onAnswer }: QuizQ
               >
                 {selectedIdx === question.correctIndex ? "That's right! 🌸" : "Oops! Almost 😄"}
               </p>
-              {question.hint && (
-                <p className="text-sm italic" style={{ color: 'var(--color-text-light)' }}>
-                  {question.hint}
-                </p>
-              )}
             </motion.div>
           )}
         </AnimatePresence>

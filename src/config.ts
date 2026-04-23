@@ -130,17 +130,17 @@ export const CONFIG = {
 
   // ─── Album Photos ────────────────────────────────────
   ALBUM_PHOTOS: [
-    { src: myFevImage, caption: "Late night LINE calls — distance never stood a chance 💕", rotation: -2 },
-    { src: sisWeddingEvent, caption: "Plus one to a wedding — looking like a dream couple 💃", rotation: 2.5 },
-    { src: grandmaVisit, caption: "Meeting the grandma! She loved you instantly 👵💕", rotation: -1.5 },
-    { src: chillingInTheRoom, caption: "Cozy days in the room — my favorite place is next to you 🛋️", rotation: 3 },
-    { src: car, caption: "Road trip vibes — you, me, and the open road 🚗", rotation: -2.5 },
-    { src: batminton, caption: "Badminton date — competitive but always on the same team 🏸", rotation: 1.5 },
-    { src: chill1, caption: "Just chilling — the simple moments are the sweetest ☕", rotation: -3 },
-    { src: chill2, caption: "More chill time — I could spend forever doing nothing with you ✨", rotation: 2 },
-    { src: brahhh, caption: "That face 😂 — you always know how to make me laugh", rotation: -1 },
-    { src: petEvent, caption: "Pet event day — surrounded by cuteness (including you) 🐶", rotation: 3 },
-    { src: puayTime, caption: "Fun times together — every moment with you is an adventure 🎉", rotation: -2 },
+    { src: myFevImage, caption: "Gun Dog Girlfriend 🐶", rotation: -2 },
+    { src: sisWeddingEvent, caption: "Offical opening for my sis and you, especially when you got her flower", rotation: 2.5 },
+    { src: grandmaVisit, caption: "Meeting the grandma!", rotation: -1.5 },
+    { src: chillingInTheRoom, caption: "Cozy days in the room", rotation: 3 },
+    { src: car, caption: "Road trip vibes at Phuket 🚗", rotation: -2.5 },
+    { src: batminton, caption: "Badminton Time !", rotation: 1.5 },
+    { src: chill1, caption: "Just chilling ☕", rotation: -3 },
+    { src: chill2, caption: "More chill time ✨", rotation: 2 },
+    { src: brahhh, caption: "That face 😂", rotation: -1 },
+    { src: petEvent, caption: "Pet event day 🐶", rotation: 3 },
+    { src: puayTime, caption: "First and Latest time @Puay together 🤓", rotation: -2 },
   ] as Array<{ src: string; caption: string; rotation: number }>,
 
   // ─── Map Pins ────────────────────────────────────────
@@ -149,7 +149,7 @@ export const CONFIG = {
       lat: 7.762160018937142,
       lng: 98.30545607471122,
       title: "Phuket Getaway",
-      note: "Sun, sand, and us — our tropical escape together. Every sunset was more beautiful because I watched it with you 🌅",
+      note: "Seeing sunset together at prime spot of Phuket",
       emoji: "🏖️",
       photo: phuketTime,
     },
@@ -157,7 +157,7 @@ export const CONFIG = {
       lat: 13.28458122517785,
       lng: 100.91478661184593,
       title: "Chill Day at Bang Saen",
-      note: "Lazy beach vibes, seafood by the shore, and your laughter carried by the ocean breeze 🌊",
+      note: "Lazy time at beach, seafood by the shore 🌊",
       emoji: "🌊",
       photo: chillBangsan,
     },
@@ -165,7 +165,7 @@ export const CONFIG = {
       lat: 13.914240938789717,
       lng: 100.54840380325602,
       title: "Cocktail Concert Night",
-      note: "Drinks, live music, and dancing the night away. You looked incredible under those lights 🍸",
+      note: "The concert that we planed so long since I was at Japan.",
       emoji: "🍹",
       photo: cocktailConcert,
     },
@@ -174,7 +174,7 @@ export const CONFIG = {
       lat: 13.779343511903729,
       lng: 100.39158411611159,
       title: "Dog Café Date",
-      note: "Puppies and you — my two favorite things in one place. Your smile when you held that little one was everything 🐕",
+      note: "First time I bring you to meet your friends 😂. I'm so happy to have time with you before going to Japan",
       emoji: "🐶",
       photo: dogCafe,
     },
@@ -182,7 +182,7 @@ export const CONFIG = {
       lat: 13.669632110706429,
       lng: 100.61016502489561,
       title: "Halloween Concert",
-      note: "Costumes, spooky vibes, and the best concert buddy I could ever ask for 🎃",
+      note: "Free ticket from your dad! I'm so happy to have time with you ❤️",
       emoji: "🎃",
       photo: halloweenConcert,
     },
@@ -190,7 +190,7 @@ export const CONFIG = {
       lat: 13.5186,
       lng: 99.9602,
       title: "Damnoen Saduak Floating Market",
-      note: "Boats, snacks, and our little adventure on the water. A classic floating market experience together! 🚣‍♂️",
+      note: "My first trip I fully plan for you 🤓",
       emoji: "🚣‍♂️",
       photo: damnoenMarket,
     },
@@ -198,15 +198,15 @@ export const CONFIG = {
       lat: 13.6925,
       lng: 100.7500,
       title: "Our First Flight Together",
-      note: "High in the sky, heading towards our next adventure. The beginning of our travel journey! ✈️",
+      note: "Our first journey to aboard by ourself (China, Shanghai) ✈️",
       emoji: "✈️",
       photo: airplane,
     },
     {
-      lat: 7.8202,
+      lat: 7.8202, 
       lng: 98.2986,
       title: "Kata Beach Chill",
-      note: "The waves were high, but our spirits were higher. Another beautiful Phuket day by the sea. 🏖️",
+      note: "Another beautiful Phuket day by the sea. 🏖️, Leave a little puppy play water 🐶",
       emoji: "🏖️",
       photo: kataBeach,
     },
@@ -214,7 +214,7 @@ export const CONFIG = {
       lat: 31.2304,
       lng: 121.4737,
       title: "Shanghai Exploration",
-      note: "Exploring the neon streets of Shanghai and finding the best coffee spots. A city that never sleeps! ☕",
+      note: "Just take a rest and chill a little bit before we continue our trip. ☕",
       emoji: "☕",
       photo: luckinShanghai,
     },
@@ -222,7 +222,7 @@ export const CONFIG = {
       lat: 34.6937,
       lng: 135.5023,
       title: "Osaka Trip",
-      note: "Dotonbori lights and all the street food we could eat. Japan with you was an absolute dream. 🇯🇵",
+      note: " First time to Japan with you 🇯🇵",
       emoji: "🇯🇵",
       photo: osaka,
     },
@@ -241,34 +241,28 @@ export const CONFIG = {
   LOVE_NOTES: [
     "Your smile lights up my entire world 🌟",
     "The way you laugh makes everything better",
-    "You make even ordinary days feel magical ✨",
-    "I love how your eyes sparkle when you're happy",
-    "Your kindness inspires me every single day",
-    "I fall in love with you a little more each morning 🌅",
-    "You're my favorite person in the whole universe",
-    "The sound of your voice is my favorite melody 🎵",
+    "You always make my life colorful", 
+    "I love eveything about you, your big mounth, your eyes, etc 😇 ",
+    "I always happy when you do things for me",
+    "You will be main part of my life and my future plan",
+    "You are my many first time and many more",
+    "The sound of your voice is always make rooms not quiet and boring",
   ],
 
   // ─── Love Letter ─────────────────────────────────────
   LOVE_LETTER: {
     greeting: "My Dearest,",
-    body: `From the moment I met you, I knew my life was about to change in the most beautiful way. Every day with you feels like a gift I never knew I deserved.
-
-You have this incredible way of making the world brighter just by being in it. Your laugh is my favorite sound. Your smile, my favorite sight. And your heart — oh, your heart — is the most beautiful thing I've ever known.
-
-I love the way you scrunch your nose when you're thinking. I love how you always know exactly what to say to make me feel better. I love the little things — the way you hold my hand, the notes you leave me, the way you look at me like I'm the only person in the room.
-
-Every moment with you is a treasure. Every memory we make is a jewel I keep safe in my heart. And every tomorrow with you is a promise I will always cherish.
-
-Thank you for choosing me. Thank you for loving me. Thank you for being you.`,
+    body: `From the moment I met you, I knew my life was about to change in the most beautiful way. Every day with you feels like a gift making my life is more colorful.
+    You have this incredible way of making the world brighter just by yaping and yaping non-stop 😂. I love the way you treat me like I am the most important person in your world. I truely appreciate how can you live and accept me even I do something wrong.
+    Thank you for choosing me. Thank you for loving me. Thank you for being you.`,
     closing: "Forever and always yours,",
-    signature: "My Name",
+    signature: "BossTheMeow",
   },
 
   // ─── Finale ──────────────────────────────────────────
   FINALE_MESSAGE:
     "Here's to every sunrise we'll share, every laugh that echoes between us, and every quiet moment that speaks louder than words. You are my forever, and I am so grateful for every single day.",
-  FINALE_SIGNATURE: "With all my love, My Name 💕",
+  FINALE_SIGNATURE: "With all my love, Boss 💕",
 
   // ─── Quiz ────────────────────────────────────────────
   QUIZ_QUESTIONS: [
@@ -279,10 +273,10 @@ Thank you for choosing me. Thank you for loving me. Thank you for being you.`,
       hint: "We met during COVID-19"
     },
     {
-      question: "What was our first meal together? 🍜",
-      options: ["Italian Pasta", "Shabu Shabu", "Street Food", "Japanese Sushi"],
-      correctIndex: 1,
-      hint: "We shared a big pot of delicious soup!"
+      question: "What is our first date place? 👻",
+      options: ["University", "Central Ladprao", "Future Park Rangsit", "Local village in TU100 Subject"],
+      correctIndex: 2,
+      hint: "It is bigest mall in Rangsit"
     },
     {
       question: "What is my favorite color? 🎨",

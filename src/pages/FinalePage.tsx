@@ -10,6 +10,13 @@ export default function FinalePage() {
   const [duration, setDuration] = useState({ years: 0, months: 0, days: 0 });
   const [totalDays, setTotalDays] = useState(0);
 
+  const floatingImages = [
+    { src: CONFIG.ALBUM_PHOTOS[4]?.src || CONFIG.ALBUM_PHOTOS[0].src, className: "top-[15%] left-[5%] lg:left-[10%] w-28 h-28 md:w-40 md:h-40 rotate-[-5deg]", delay: 0.3 },
+    { src: CONFIG.ALBUM_PHOTOS[5]?.src || CONFIG.ALBUM_PHOTOS[1].src, className: "bottom-[15%] left-[5%] lg:left-[15%] w-32 h-32 md:w-48 md:h-48 rotate-[6deg]", delay: 0.7 },
+    { src: CONFIG.ALBUM_PHOTOS[6]?.src || CONFIG.ALBUM_PHOTOS[2].src, className: "top-[20%] right-[5%] lg:right-[10%] w-32 h-32 md:w-44 md:h-44 rotate-[8deg]", delay: 0.5 },
+    { src: CONFIG.ALBUM_PHOTOS[7]?.src || CONFIG.ALBUM_PHOTOS[3].src, className: "bottom-[20%] right-[5%] lg:right-[15%] w-28 h-28 md:w-36 md:h-36 rotate-[-7deg]", delay: 0.9 },
+  ];
+
   useEffect(() => {
     // Parse Thai Buddhist calendar date
     const start = parseThaiDate(CONFIG.ANNIVERSARY_DATE);
@@ -48,9 +55,23 @@ export default function FinalePage() {
         <div className="absolute top-[-10%] left-[-5%] w-[400px] h-[400px] rounded-full opacity-15" style={{ background: 'radial-gradient(circle, #f48fb1, transparent)' }} />
         <div className="absolute bottom-[-10%] right-[-5%] w-[350px] h-[350px] rounded-full opacity-10" style={{ background: 'radial-gradient(circle, #ce93d8, transparent)' }} />
 
+        {/* Floating Images */}
+        {floatingImages.map((img, idx) => (
+          <motion.div
+            key={idx}
+            className={`absolute hidden sm:block rounded-xl shadow-xl border-4 border-white overflow-hidden ${img.className} z-0 opacity-80`}
+            initial={{ opacity: 0, y: 20, scale: 0.8 }}
+            animate={{ opacity: 0.8, y: 0, scale: 1 }}
+            transition={{ delay: img.delay, duration: 1, ease: 'easeOut' }}
+            whileHover={{ scale: 1.05, rotate: 0, zIndex: 10, opacity: 1 }}
+          >
+            <img src={img.src} alt="Memory" className="w-full h-full object-cover" />
+          </motion.div>
+        ))}
+
         {/* Pulsing heart */}
         <motion.div
-          className="text-7xl md:text-8xl mb-6 animate-heart-pulse"
+          className="text-7xl md:text-8xl mb-6 animate-heart-pulse z-10"
           initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.5 }}
@@ -60,7 +81,7 @@ export default function FinalePage() {
 
         {/* Heading */}
         <motion.h1
-          className="text-4xl md:text-6xl lg:text-7xl font-bold text-center mb-8"
+          className="text-4xl md:text-6xl lg:text-7xl font-bold text-center mb-8 z-10"
           style={{ fontFamily: 'var(--font-serif)', color: 'var(--color-rose-deep)', textShadow: '0 2px 20px rgba(233,30,99,0.15)' }}
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -71,7 +92,7 @@ export default function FinalePage() {
 
         {/* Duration counter — years · months · days */}
         <motion.div
-          className="text-center mb-4"
+          className="text-center mb-4 z-10"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 1.2 }}
@@ -132,7 +153,7 @@ export default function FinalePage() {
 
         {/* Personal message */}
         <motion.p
-          className="max-w-xl text-center text-lg md:text-xl leading-relaxed mb-8"
+          className="max-w-xl text-center text-lg md:text-xl leading-relaxed mb-8 z-10"
           style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', color: 'var(--color-text-primary)' }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -143,7 +164,7 @@ export default function FinalePage() {
 
         {/* Signature */}
         <motion.p
-          className="text-lg mb-10"
+          className="text-lg mb-10 z-10"
           style={{ fontFamily: 'var(--font-serif)', color: 'var(--color-rose)', fontStyle: 'italic' }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -154,6 +175,7 @@ export default function FinalePage() {
 
         {/* Back to home button */}
         <motion.div
+          className="z-10"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 2.4 }}

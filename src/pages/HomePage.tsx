@@ -6,6 +6,13 @@ import PageTransition from '../components/PageTransition';
 export default function HomePage() {
   const letters = CONFIG.HER_NAME.split('');
 
+  const floatingImages = [
+    { src: CONFIG.ALBUM_PHOTOS[0].src, className: "top-[15%] left-[5%] lg:left-[10%] w-32 h-32 md:w-48 md:h-48 rotate-[-6deg]", delay: 0.2 },
+    { src: CONFIG.ALBUM_PHOTOS[1].src, className: "bottom-[15%] left-[5%] lg:left-[15%] w-28 h-28 md:w-40 md:h-40 rotate-[8deg]", delay: 0.5 },
+    { src: CONFIG.ALBUM_PHOTOS[2].src, className: "top-[20%] right-[5%] lg:right-[10%] w-36 h-36 md:w-52 md:h-52 rotate-[5deg]", delay: 0.8 },
+    { src: CONFIG.ALBUM_PHOTOS[3].src, className: "bottom-[20%] right-[5%] lg:right-[12%] w-32 h-32 md:w-44 md:h-44 rotate-[-8deg]", delay: 1.1 },
+  ];
+
   return (
     <PageTransition>
       <div
@@ -24,9 +31,23 @@ export default function HomePage() {
           style={{ background: 'radial-gradient(circle, #ce93d8, transparent)' }}
         />
 
+        {/* Floating Images */}
+        {floatingImages.map((img, idx) => (
+          <motion.div
+            key={idx}
+            className={`absolute hidden sm:block rounded-xl shadow-xl border-4 border-white overflow-hidden ${img.className} z-0 opacity-80`}
+            initial={{ opacity: 0, y: 20, scale: 0.8 }}
+            animate={{ opacity: 0.8, y: 0, scale: 1 }}
+            transition={{ delay: img.delay, duration: 1, ease: 'easeOut' }}
+            whileHover={{ scale: 1.05, rotate: 0, zIndex: 10, opacity: 1 }}
+          >
+            <img src={img.src} alt="Memory" className="w-full h-full object-cover" />
+          </motion.div>
+        ))}
+
         {/* Her name — letter by letter */}
         <motion.div
-          className="flex flex-wrap justify-center mb-6"
+          className="flex flex-wrap justify-center mb-6 z-10"
           initial="hidden"
           animate="visible"
           variants={{
@@ -56,7 +77,7 @@ export default function HomePage() {
 
         {/* Main heading */}
         <motion.h1
-          className="text-2xl md:text-4xl text-center mb-4 font-light"
+          className="text-2xl md:text-4xl text-center mb-4 font-light z-10"
           style={{
             fontFamily: 'var(--font-serif)',
             color: 'var(--color-text-primary)',
@@ -70,7 +91,7 @@ export default function HomePage() {
 
         {/* Anniversary date */}
         <motion.p
-          className="text-lg md:text-xl mb-10 tracking-widest uppercase"
+          className="text-lg md:text-xl mb-10 tracking-widest uppercase z-10"
           style={{
             fontFamily: 'var(--font-sans)',
             color: 'var(--color-text-light)',
@@ -86,6 +107,7 @@ export default function HomePage() {
 
         {/* CTA Button */}
         <motion.div
+          className="z-10"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 2.8, duration: 0.6, ease: 'easeOut' }}
