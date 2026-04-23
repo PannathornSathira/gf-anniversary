@@ -24,7 +24,7 @@ import chill1 from './assets/images/album/chill1.jpg';
 import chill2 from './assets/images/album/chill2.jpg';
 import chillingInTheRoom from './assets/images/album/chilling-in-the-room.jpg';
 import grandmaVisit from './assets/images/album/grandma-visit.jpg';
-import myFevImage from './assets/images/album/my-fev-image.png';
+import myFevImage from './assets/images/album/my-fev-image2.jpg';
 import petEvent from './assets/images/album/pet-event.jpg';
 import puayTime from './assets/images/album/puay-time.jpg';
 import sisWeddingEvent from './assets/images/album/sis-wedding-event.jpg';
